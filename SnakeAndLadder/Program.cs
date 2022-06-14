@@ -37,14 +37,18 @@ namespace SnakeAndLadder
                         Console.WriteLine("No play");
                         break;
                 }
+                if (playerposition > 100)
+                {
+                    playerposition = playerposition - dienumber;
+                }
 
-                if (playerposition < 0)
+                    if (playerposition < 0)
                 {
                     playerposition = 0;
                 }
                 Console.WriteLine("final position checker: " + playerposition);
             }
-            Console.WriteLine("player beat the snakes and completed the game" + playerposition);
+            Console.WriteLine("player beat the snakes and completed the game: " + playerposition);
 
 
         }
