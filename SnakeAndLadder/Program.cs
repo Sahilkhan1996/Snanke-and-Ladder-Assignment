@@ -6,7 +6,7 @@ namespace SnakeAndLadder
     {
 
         static int playerposition;
-
+        static int count;
         static void Main(string[] args)
         {
             //uc1: the position of player startng from 0
@@ -14,7 +14,8 @@ namespace SnakeAndLadder
             //uc2: the player roll the die for the 1st time.
             while (playerposition < 100)
             {
-
+                count++;
+                Console.WriteLine("number of time the die is rolling" + count);
                 Random r = new Random();
                 int dienumber = r.Next(1, 7);
                 Console.WriteLine("Rolling die rolling number for the firsttime: " + dienumber);
@@ -41,16 +42,16 @@ namespace SnakeAndLadder
                 {
                     playerposition = playerposition - dienumber;
                 }
-
-                    if (playerposition < 0)
+                if (playerposition < 0)
                 {
                     playerposition = 0;
                 }
                 Console.WriteLine("final position checker: " + playerposition);
             }
-            Console.WriteLine("player beat the snakes and completed the game: " + playerposition);
+            Console.WriteLine("player beat the snakes and completed the game: " + playerposition + " number of time the die rolled: " + count);
 
 
         }
+
     }
 }
